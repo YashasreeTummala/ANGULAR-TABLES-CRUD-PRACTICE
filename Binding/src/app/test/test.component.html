@@ -1,0 +1,41 @@
+<p>test works!</p>
+<h2>
+    {{name}}
+</h2>
+<h3>
+    {{2+2}} <br>
+    {{name.length}} <br>
+    {{"Welcome " + name}} <br>
+    {{greet() + "Bye!"}} <br>
+    {{"full stack Developer" | titlecase}}
+</h3>
+
+<input [id]="myId1" bind-disabled="isDisabled1" type="text" value="Vishwas">
+<input id="{{myId2}}" [disabled]="isDisabled2" type="text" value="Young">
+
+<h2 class="text-success">JAVA</h2>
+<h2 [class] = "textSuccess">CPP</h2>
+<h2 [class.text-danger] = "isError">PYTHON</h2>
+<h2 [ngClass]="message">FULL STACK</h2>
+
+<div class="card card-block" *ngFor="let joke of jokes">
+    <h4 class="card-title">{{joke.setup}}</h4>
+    <p class="card-text" [hidden]="joke.hide">{{joke.punchline}}</p>
+    <a class="btn btn-primary" (click)="toggle(joke)">Tell Me</a>
+</div>
+
+<h2 [style.color]="'orange'">Style Binding</h2>
+<h2 [style.color]="isError ? 'red' : 'green'">Style Binding 2</h2>
+<h2 [style.color]="highlightColor">Style Binding 3</h2>
+<h2 [ngStyle]="titleStyles">Style Binding 4</h2>
+
+<button (click) = "onClick($event)">BUTTON1</button>
+<button (click) = "greeting = 'PURSUING MY FSD'">BUTTON2</button>
+<h3>{{greeting}}</h3>
+
+<input #myInput type="text">
+<button (click) = "logMessage(myInput.value)">BUTTON</button>
+
+<!--<h1>{{greeting1}}</h1> -->
+<input type="text" [(ngModel)]="name1">
+{{name1}}
